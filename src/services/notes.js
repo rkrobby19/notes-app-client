@@ -11,6 +11,11 @@ class NoteServices {
     });
     return resp;
   };
+
+  static getAllNotes = async () => {
+    const resp = await fetch(URI);
+    return resp;
+  };
 }
 
 export default NoteServices;
