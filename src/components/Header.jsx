@@ -1,6 +1,6 @@
 import { Container, Navbar } from "react-bootstrap";
 
-function MyHeader() {
+const MyHeader = () => {
   return (
     <Navbar className="my-navbar">
       <Container>
@@ -14,6 +14,6 @@ function MyHeader() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default MyHeader;

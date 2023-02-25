@@ -12,7 +12,6 @@ function App() {
 
   useEffect(() => {
     NoteServices.getAllNotes()
-      .then((resp) => resp.json())
       .then((data) => setNotes(data.notes))
       .catch((err) => console.log(err));
   });
@@ -22,9 +21,15 @@ function App() {
       <Container>
         <CreateArea />
         <Container className="notes-area">
-          {notes.map((note) => (
-            <MyNote tittle={note.tittle} body={note.body} />
-          ))}
+          {notes &&
+            notes.map((note) => (
+              <MyNote
+                key={note._id}
+                tittle={note.tittle}
+                body={note.note}
+                noteId={note.id}
+              />
+            ))}
         </Container>
       </Container>
       <MyFooter />
