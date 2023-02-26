@@ -17,15 +17,12 @@ const NoteModal = ({ show, handleClose, id, tittle, body }) => {
 
   const updateHandler = async (id, tittle, body) => {
     const resp = await NoteServices.updateNoteByIdHandler(id, tittle, body);
-    const data = await resp.json();
-
-    console.log(data);
+    console.log(resp);
   };
 
-  const deleteHandler = (noteId) => {
-    NoteServices.deleteNoteByIdHandler(noteId)
-      .then((resp) => console.log(resp))
-      .catch((err) => console.log(err));
+  const deleteHandler = async (noteId) => {
+    const resp = await NoteServices.deleteNoteByIdHandler(noteId);
+    console.log(resp);
   };
 
   return (

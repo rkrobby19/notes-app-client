@@ -21,9 +21,8 @@ const CreateArea = () => {
 
   const submitHandler = async () => {
     const resp = await NoteServices.addNotes(tittle, body);
-    const data = await resp.json();
-    if (data.note._id) {
-      alert(`Successfully add note`);
+
+    if (resp.data.id) {
       resetState();
     } else {
       alert(`Failed to add note`);
