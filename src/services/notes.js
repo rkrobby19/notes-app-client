@@ -9,7 +9,8 @@ class NoteServices {
       },
       body: JSON.stringify({ tittle, body }),
     });
-    return resp;
+    const data = await resp.json();
+    return data;
   };
 
   static getAllNotes = async () => {
@@ -26,14 +27,14 @@ class NoteServices {
       },
       body: JSON.stringify({ tittle, body }),
     });
-
-    return resp;
+    const data = await resp.json();
+    return data;
   };
 
   static deleteNoteByIdHandler = async (id) => {
     const resp = await fetch(URI + "/" + id, { method: "DELETE" });
-
-    return resp;
+    const data = await resp.json();
+    return data;
   };
 }
 

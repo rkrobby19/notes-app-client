@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     NoteServices.getAllNotes()
-      .then((data) => setNotes(data.notes))
+      .then((notes) => setNotes(notes.data))
       .catch((err) => console.log(err));
   });
   return (
